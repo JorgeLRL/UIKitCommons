@@ -62,7 +62,9 @@ extension ViewController: UITableViewDelegate {
     private func showModal() {
         let modalConfiguration = ModalConfiguration(customView: buildAlertView(),
                                                     secondaryActionText: "Cancelar",
-                                                    buttonPadAligment: .vertical)
+                                                    secondaryButtonColor: .clear,
+                                                    buttonPadAligment: .vertical,
+                                                    underlineButtonsWhenHasNoBackgroundColor: true)
         showModal(modalConfiguration)
     }
     
