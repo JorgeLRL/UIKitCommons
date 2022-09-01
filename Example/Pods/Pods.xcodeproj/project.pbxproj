@@ -52,12 +52,12 @@
 		0449F43B586DAF6D4E582E49CC1E3A4C /* Pods-UIKitCommons_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKitCommons_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		09EB4714E89F9372694D36E54BBAD1C9 /* ButtonPadAlign.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonPadAlign.swift; sourceTree = "<group>"; };
 		184D194E2704E9D1062D0484DFCC4DA5 /* ButtonPadView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ButtonPadView.swift; sourceTree = "<group>"; };
-		1FBF31B6E593C2916C67B80B38C7914B /* Pods-UIKitCommons_Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-UIKitCommons_Example"; path = Pods_UIKitCommons_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FBF31B6E593C2916C67B80B38C7914B /* Pods_UIKitCommons_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitCommons_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FE578CB9BD7DA6FC781D8078E50279E /* UIKitCommons-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIKitCommons-dummy.m"; sourceTree = "<group>"; };
 		2AF9E61BC21BEB7EFBB4C435226EE8A0 /* Globals.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		324941E6D1183E18BC9FC2FD4313874B /* AlertView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
-		33DF9A81D693D331FB42BFC09D719964 /* UIKitCommons */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIKitCommons; path = UIKitCommons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3A074906AB79C19DA70B82AF5B210FCB /* Pods-UIKitCommons_Tests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-UIKitCommons_Tests"; path = Pods_UIKitCommons_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33DF9A81D693D331FB42BFC09D719964 /* UIKitCommons.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIKitCommons.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A074906AB79C19DA70B82AF5B210FCB /* Pods_UIKitCommons_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UIKitCommons_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DBDE52E20C366542A51BC380E1ED49F /* UIKitCommons-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIKitCommons-umbrella.h"; sourceTree = "<group>"; };
 		3DE85B6F80012D1B57EF7F8F2E971AEA /* UIViewController+ModalView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "UIViewController+ModalView.swift"; sourceTree = "<group>"; };
 		45DC53E8C790FE20A27CEF1D49DD217E /* Pods-UIKitCommons_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIKitCommons_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -68,12 +68,12 @@
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7406C00069FC17830E9D0410473958BF /* Pods-UIKitCommons_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKitCommons_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		83E2725B1B7D3F143A3C77047B86D99A /* Pods-UIKitCommons_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIKitCommons_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		87EC4BF6F1AD5C31C2405B40DB82E3F8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		87EC4BF6F1AD5C31C2405B40DB82E3F8 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		93877C55368288BF074627767E4DA512 /* UIKitCommons-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "UIKitCommons-Info.plist"; sourceTree = "<group>"; };
 		967043DEF1C122C5C87529B3A49B8A1C /* Pods-UIKitCommons_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UIKitCommons_Tests.modulemap"; sourceTree = "<group>"; };
 		98015F0777A2D5B40239536529E83D64 /* Pods-UIKitCommons_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UIKitCommons_Example.modulemap"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F06C2D37FEEFFF04A36CB304FF84FF4 /* UIKitCommons.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = UIKitCommons.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F06C2D37FEEFFF04A36CB304FF84FF4 /* UIKitCommons.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = UIKitCommons.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FE4D964E4B82A526DB44B029C1F88B6 /* ModalViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		A1A73E1B306630423654E87FFA9EE77D /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		A693AAB7A12BC4D093740EFB7C6A363C /* UIKitCommons-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIKitCommons-prefix.pch"; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		E3AD6CC55EC14A77441A6949E4BEF869 /* Pods-UIKitCommons_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIKitCommons_Example-Info.plist"; sourceTree = "<group>"; };
 		E69E1632D6BC75DA020559B3CA2FC28C /* UIKitCommons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIKitCommons.release.xcconfig; sourceTree = "<group>"; };
 		E70D5D16872233C7FD5399BEA0367489 /* Pods-UIKitCommons_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIKitCommons_Example-umbrella.h"; sourceTree = "<group>"; };
-		E85F3035550DF384C84B1EBCD1978764 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E85F3035550DF384C84B1EBCD1978764 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EF1F4C519BFA195BDA4C9CA5EA154C8E /* AlertLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AlertLayout.swift; sourceTree = "<group>"; };
 		F5A27CE2E8245DB3804F7C69C9999E5C /* Pods-UIKitCommons_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIKitCommons_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FAA6D4BA8BF3958B7E3127681868DA8E /* Then.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
@@ -235,9 +235,9 @@
 		B4B5DFFEC773DCEEC278D061E32CE515 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1FBF31B6E593C2916C67B80B38C7914B /* Pods-UIKitCommons_Example */,
-				3A074906AB79C19DA70B82AF5B210FCB /* Pods-UIKitCommons_Tests */,
-				33DF9A81D693D331FB42BFC09D719964 /* UIKitCommons */,
+				1FBF31B6E593C2916C67B80B38C7914B /* Pods_UIKitCommons_Example.framework */,
+				3A074906AB79C19DA70B82AF5B210FCB /* Pods_UIKitCommons_Tests.framework */,
+				33DF9A81D693D331FB42BFC09D719964 /* UIKitCommons.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -249,7 +249,6 @@
 				6DD2A799305B924F224F12A006CA762A /* UIView+Constraints.swift */,
 				A1A73E1B306630423654E87FFA9EE77D /* UIViewControllerExtensions.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -359,7 +358,7 @@
 			);
 			name = "Pods-UIKitCommons_Tests";
 			productName = Pods_UIKitCommons_Tests;
-			productReference = 3A074906AB79C19DA70B82AF5B210FCB /* Pods-UIKitCommons_Tests */;
+			productReference = 3A074906AB79C19DA70B82AF5B210FCB /* Pods_UIKitCommons_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		0783E479D63D39DB5D648CC3FB1E8277 /* Pods-UIKitCommons_Example */ = {
@@ -378,7 +377,7 @@
 			);
 			name = "Pods-UIKitCommons_Example";
 			productName = Pods_UIKitCommons_Example;
-			productReference = 1FBF31B6E593C2916C67B80B38C7914B /* Pods-UIKitCommons_Example */;
+			productReference = 1FBF31B6E593C2916C67B80B38C7914B /* Pods_UIKitCommons_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		1FAEF6D2952486495A9DDB979585A5BE /* UIKitCommons */ = {
@@ -396,7 +395,7 @@
 			);
 			name = UIKitCommons;
 			productName = UIKitCommons;
-			productReference = 33DF9A81D693D331FB42BFC09D719964 /* UIKitCommons */;
+			productReference = 33DF9A81D693D331FB42BFC09D719964 /* UIKitCommons.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -406,7 +405,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1340;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -524,7 +523,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-UIKitCommons_Example/Pods-UIKitCommons_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-UIKitCommons_Example/Pods-UIKitCommons_Example.modulemap";
@@ -558,7 +557,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-UIKitCommons_Tests/Pods-UIKitCommons_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-UIKitCommons_Tests/Pods-UIKitCommons_Tests.modulemap";
@@ -591,7 +590,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-UIKitCommons_Example/Pods-UIKitCommons_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-UIKitCommons_Example/Pods-UIKitCommons_Example.modulemap";
@@ -658,13 +657,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -686,7 +684,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-UIKitCommons_Tests/Pods-UIKitCommons_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-UIKitCommons_Tests/Pods-UIKitCommons_Tests.modulemap";
@@ -720,7 +718,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UIKitCommons/UIKitCommons-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UIKitCommons/UIKitCommons-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/UIKitCommons/UIKitCommons.modulemap";
 				PRODUCT_MODULE_NAME = UIKitCommons;
@@ -751,7 +749,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UIKitCommons/UIKitCommons-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UIKitCommons/UIKitCommons-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/UIKitCommons/UIKitCommons.modulemap";
 				PRODUCT_MODULE_NAME = UIKitCommons;
@@ -820,7 +818,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
