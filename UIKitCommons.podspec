@@ -30,7 +30,8 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'UIKitCommons/Classes/**/*'
+  s.source_files = 'UIKitCommons/Classes/**/*.swift'
+  s.swift_version = '5.0'
   
   # s.resource_bundles = {
   #   'UIKitCommons' => ['UIKitCommons/Assets/*.png']

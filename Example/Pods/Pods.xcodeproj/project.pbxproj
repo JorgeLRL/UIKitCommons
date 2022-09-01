@@ -670,38 +670,6 @@
 			};
 			name = Release;
 		};
-		888117F39F5A7B6AF4CF16B4E8C839DE /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E69E1632D6BC75DA020559B3CA2FC28C /* UIKitCommons.release.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UIKitCommons/UIKitCommons-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UIKitCommons/UIKitCommons-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UIKitCommons/UIKitCommons.modulemap";
-				PRODUCT_MODULE_NAME = UIKitCommons;
-				PRODUCT_NAME = UIKitCommons;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		9071DB8CB3F216AA50C31CC582B97BA1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0449F43B586DAF6D4E582E49CC1E3A4C /* Pods-UIKitCommons_Tests.release.xcconfig */;
@@ -729,6 +697,69 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B6BB9E93DECA4BBA3008A4207B56CCAA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF9C1DA6B64E2B0D61C7F8ECDB8A0766 /* UIKitCommons.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIKitCommons/UIKitCommons-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIKitCommons/UIKitCommons-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UIKitCommons/UIKitCommons.modulemap";
+				PRODUCT_MODULE_NAME = UIKitCommons;
+				PRODUCT_NAME = UIKitCommons;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BD80C970A4EECD4F148E0DCDB60706D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E69E1632D6BC75DA020559B3CA2FC28C /* UIKitCommons.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIKitCommons/UIKitCommons-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIKitCommons/UIKitCommons-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UIKitCommons/UIKitCommons.modulemap";
+				PRODUCT_MODULE_NAME = UIKitCommons;
+				PRODUCT_NAME = UIKitCommons;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -802,45 +833,14 @@
 			};
 			name = Debug;
 		};
-		E457DFF6AADF18851A69B43F17A72D7D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF9C1DA6B64E2B0D61C7F8ECDB8A0766 /* UIKitCommons.debug.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UIKitCommons/UIKitCommons-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UIKitCommons/UIKitCommons-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UIKitCommons/UIKitCommons.modulemap";
-				PRODUCT_MODULE_NAME = UIKitCommons;
-				PRODUCT_NAME = UIKitCommons;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
 		1AFD1FD5EBDA78981596335D87DF9C50 /* Build configuration list for PBXNativeTarget "UIKitCommons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E457DFF6AADF18851A69B43F17A72D7D /* Debug */,
-				888117F39F5A7B6AF4CF16B4E8C839DE /* Release */,
+				B6BB9E93DECA4BBA3008A4207B56CCAA /* Debug */,
+				BD80C970A4EECD4F148E0DCDB60706D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
