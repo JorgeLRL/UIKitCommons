@@ -153,7 +153,7 @@ class ModalViewController: UIViewController {
                                   right: view.rightAnchor)
         
         // buttonPadView
-        buttonPadView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: buttonsPadBottomPadding).isActive = true
+        buttonPadView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: buttonsPadBottomPadding).isActive = true
     }
     
     @objc
