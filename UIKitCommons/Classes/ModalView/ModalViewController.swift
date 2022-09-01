@@ -9,7 +9,7 @@ import UIKit
 
 class ModalViewController: UIViewController {
     
-    // MARK: - Private Properties
+    // MARK: - Private UI Properties
     
     private var backgroundView = UIView()
     
@@ -31,50 +31,36 @@ class ModalViewController: UIViewController {
         $0.primaryCompletion = { [weak self] in self?.dismissWithEffect(completion: self?.primaryCompletion) }
         $0.secondaryCompletion = { [weak self] in self?.dismissWithEffect(completion: self?.secondaryCompletion) }
     }
-    private var buttonPadViewBottomConstraint: NSLayoutConstraint?
+    
+    // MARK: - Private Properties
+    
+    private var configuration = ModalConfiguration()
+    
+    // MARK: - Private Closure Properties
     
     private var primaryCompletion: CompletionHandler?
     private var secondaryCompletion: CompletionHandler?
     private var backgroundTapDismissViewCompletion: CompletionHandler?
-    private var customView: UIView?
-    private var primaryActionText = ""
-    private var secondaryActionText: String?
-    private var showButtons = true
-    private var primaryButtonColor: UIColor?
-    private var secondaryButtonColor: UIColor?
-    private var primaryButtonTitleColor: UIColor?
-    private var secondaryButtonTitleColor: UIColor?
-    private var primaryButtonCornerRadius: CGFloat = 8
-    private var secondaryButtonCornerRadius: CGFloat = 0
-    private var buttonPadAlign: ButtonPadAlign = .horizontal
-    private var backgroundTapDismissView = false
-    private var closeButtonPaddingTop: CGFloat = 16
-    private var closeButtonPaddingRight: CGFloat = 16
-    private var closeButtonHeight: CGFloat = 20
-    private var closeButtonWidth: CGFloat = 20
-    private var buttonsPadSpacing: CGFloat = 0
-    private var buttonsPadHorizontalPadding: CGFloat = 0
-    private var buttonsPadBottomPadding: CGFloat = 0
-    private var buttonsPadCornerRadius: CGFloat = 8
     
-    // MARK: - L
+    // MARK: - UIViewController Lyfecycle Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubViews()
-        buttonPadView.alignment = buttonPadAlign
-        buttonPadView.buttonsSpacing = buttonsPadSpacing
-        buttonPadView.setButtons(horizontalPadding: buttonsPadHorizontalPadding,
-                                 cornerRadius: buttonsPadCornerRadius,
-                                 primaryButtonCornerRadius: primaryButtonCornerRadius,
-                                 secondaryButtonCornerRadius: secondaryButtonCornerRadius)
-        buttonPadView.primaryButtonText = primaryActionText
-        buttonPadView.primaryButtonColor = primaryButtonColor
-        buttonPadView.primaryButtonTitleColor = primaryButtonTitleColor
-        if let secondaryTitle = secondaryActionText {
+        buttonPadView.underlineButtonsWhenHasNoBackgroundColor = configuration.underlineButtonsWhenHasNoBackgroundColor
+        buttonPadView.alignment = configuration.buttonPadAligment
+        buttonPadView.buttonsSpacing = configuration.buttonsPadSpacing
+        buttonPadView.setButtons(horizontalPadding: configuration.buttonsPadHorizontalPadding,
+                                 cornerRadius: configuration.buttonsPadCornerRadius,
+                                 primaryButtonCornerRadius: configuration.primaryButtonCornerRadius,
+                                 secondaryButtonCornerRadius: configuration.secondaryButtonCornerRadius)
+        buttonPadView.primaryButtonText = configuration.primaryActionText
+        buttonPadView.primaryButtonColor = configuration.primaryButtonColor
+        buttonPadView.primaryButtonTitleColor = configuration.primaryButtonTitleColor
+        if let secondaryTitle = configuration.secondaryActionText {
             buttonPadView.secondaryButtonText = secondaryTitle
-            buttonPadView.secondaryButtonColor = secondaryButtonColor
-            buttonPadView.secondaryButtonTitleColor = secondaryButtonTitleColor
+            buttonPadView.secondaryButtonColor = configuration.secondaryButtonColor
+            buttonPadView.secondaryButtonTitleColor = configuration.secondaryButtonTitleColor
         } else {
             buttonPadView.secondaryButtonHidden = true
         }
@@ -82,14 +68,16 @@ class ModalViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let customView = customView {
+        if let customView = configuration.customView {
             customView.fixInView(contentView)
         }
-        if backgroundTapDismissView {
+        if configuration.backgroundTapDismissView {
             let tap = UITapGestureRecognizer(target: self, action: #selector(cloaseAction))
             backgroundView.addGestureRecognizer(tap)
         }
     }
+    
+    // MARK: - Override Methods
     
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -102,26 +90,7 @@ class ModalViewController: UIViewController {
                 primaryCompletion: CompletionHandler? = nil,
                 secondaryCompletion: CompletionHandler? = nil,
                 backgroundTapDismissViewCompletion: CompletionHandler? = nil) {
-        customView = configuration.customView
-        primaryActionText = configuration.primaryActionText
-        primaryButtonColor = configuration.primaryButtonColor ?? .blue
-        primaryButtonTitleColor = configuration.primaryButtonTitleColor
-        primaryButtonCornerRadius = configuration.primaryButtonCornerRadius ?? 8
-        secondaryActionText = configuration.secondaryActionText
-        secondaryButtonColor = configuration.secondaryButtonColor ?? .lightGray.withAlphaComponent(0.1)
-        secondaryButtonTitleColor = configuration.secondaryButtonTitleColor ?? .black
-        secondaryButtonCornerRadius = configuration.secondaryButtonCornerRadius ?? 8
-        showButtons = configuration.showButtons
-        buttonPadAlign = configuration.buttonPadAligment
-        buttonsPadSpacing = configuration.buttonsPadSpacing
-        buttonsPadHorizontalPadding = configuration.buttonsPadHorizontalPadding
-        buttonsPadBottomPadding = configuration.buttonsPadBottomPadding
-        buttonsPadCornerRadius = configuration.buttonsPadCornerRadius
-        backgroundTapDismissView = configuration.backgroundTapDismissView
-        closeButtonPaddingTop = configuration.closeButtonPaddingTop
-        closeButtonPaddingRight = configuration.closeButtonPaddingRight
-        closeButtonHeight = configuration.closeButtonHeight
-        closeButtonWidth = configuration.closeButtonWidth
+        self.configuration = configuration
         self.primaryCompletion = primaryCompletion
         self.secondaryCompletion = secondaryCompletion
         self.backgroundTapDismissViewCompletion = backgroundTapDismissViewCompletion
@@ -141,11 +110,11 @@ class ModalViewController: UIViewController {
     private func addConstraints() {
         // closeButton
         closeButton.anchor(top: containerStackView.topAnchor,
-                           paddingTop:  closeButtonPaddingTop,
+                           paddingTop:  configuration.closeButtonPaddingTop,
                            right: view.rightAnchor,
-                           paddingRight: closeButtonPaddingRight,
-                           width: closeButtonWidth,
-                           height: closeButtonHeight)
+                           paddingRight: configuration.closeButtonPaddingRight,
+                           width: configuration.closeButtonWidth,
+                           height: configuration.closeButtonHeight)
         
         // containerStackView
         containerStackView.anchor(bottom: view.bottomAnchor,
@@ -153,8 +122,10 @@ class ModalViewController: UIViewController {
                                   right: view.rightAnchor)
         
         // buttonPadView
-        buttonPadView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: buttonsPadBottomPadding).isActive = true
+        buttonPadView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: configuration.buttonsPadBottomPadding).isActive = true
     }
+    
+    // MARK: - Private @objc Methods
     
     @objc
     private func cloaseAction() {

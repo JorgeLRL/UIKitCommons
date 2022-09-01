@@ -10,6 +10,8 @@ import UIKit
 
 public class ModalConfiguration {
     
+    // MARK: - Internal Properties
+    
     private(set) var customView: UIView?
     private(set) var primaryActionText: String
     private(set) var secondaryActionText: String?
@@ -18,8 +20,8 @@ public class ModalConfiguration {
     private(set) var secondaryButtonColor: UIColor?
     private(set) var primaryButtonTitleColor: UIColor?
     private(set) var secondaryButtonTitleColor: UIColor?
-    private(set) var primaryButtonCornerRadius: CGFloat?
-    private(set) var secondaryButtonCornerRadius: CGFloat?
+    private(set) var primaryButtonCornerRadius: CGFloat
+    private(set) var secondaryButtonCornerRadius: CGFloat
     private(set) var buttonPadAligment: ButtonPadAlign
     private(set) var backgroundTapDismissView: Bool
     private(set) var closeButtonPaddingTop: CGFloat
@@ -30,15 +32,18 @@ public class ModalConfiguration {
     private(set) var buttonsPadHorizontalPadding: CGFloat
     private(set) var buttonsPadBottomPadding: CGFloat
     private(set) var buttonsPadCornerRadius: CGFloat
+    private(set) var underlineButtonsWhenHasNoBackgroundColor: Bool
+    
+    // MARK: - Initializers
     
     public init(customView: UIView? = nil,
                 primaryActionText: String = "Aceptar",
-                primaryButtonColor: UIColor? = nil,
+                primaryButtonColor: UIColor? = .blue,
                 primaryButtonTitleColor: UIColor? = nil,
                 primaryButtonCornerRadius: CGFloat = 8,
                 secondaryActionText: String? = nil,
-                secondaryButtonColor: UIColor? = nil,
-                secondaryButtonTitleColor: UIColor? = nil,
+                secondaryButtonColor: UIColor? = .lightGray.withAlphaComponent(0.1),
+                secondaryButtonTitleColor: UIColor? = .black,
                 secondaryButtonCornerRadius: CGFloat = 8,
                 showButtons: Bool = true,
                 buttonPadAligment: ButtonPadAlign = .horizontal,
@@ -50,7 +55,8 @@ public class ModalConfiguration {
                 closeButtonPaddingTop: CGFloat = 16,
                 closeButtonPaddingRight: CGFloat = 16,
                 closeButtonHeight: CGFloat = 20,
-                closeButtonWidth: CGFloat = 20) {
+                closeButtonWidth: CGFloat = 20,
+                underlineButtonsWhenHasNoBackgroundColor: Bool = false) {
         self.customView = customView
         self.primaryActionText = primaryActionText
         self.primaryButtonColor = primaryButtonColor
@@ -71,6 +77,7 @@ public class ModalConfiguration {
         self.closeButtonHeight = closeButtonHeight
         self.closeButtonWidth = closeButtonWidth
         self.buttonsPadCornerRadius = buttonsPadCornerRadius
+        self.underlineButtonsWhenHasNoBackgroundColor = underlineButtonsWhenHasNoBackgroundColor
     }
     
 }

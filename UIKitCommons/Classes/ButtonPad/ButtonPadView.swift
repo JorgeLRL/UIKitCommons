@@ -9,6 +9,8 @@ import UIKit
 
 class ButtonPadView: BaseUIView {
     
+    // MARK: - Private UI Properties
+    
     private let containerStackView = UIStackView().then {
         $0.distribution = .fillEqually
     }
@@ -23,6 +25,8 @@ class ButtonPadView: BaseUIView {
         }
     }
     
+    // MARK: - Public Properties
+    
     public var buttonsSpacing: CGFloat = 0 {
         didSet { containerStackView.spacing = buttonsSpacing }
     }
@@ -33,14 +37,12 @@ class ButtonPadView: BaseUIView {
     
     /// Set the left button text
     public var primaryButtonText: String = String() {
-        didSet {
-            setPrimaryButtonText()
-        }
+        didSet { setPrimaryButtonText() }
     }
     
     public var primaryButtonColor: UIColor? {
         didSet {
-            primaryButton.backgroundColor = primaryButtonColor
+            setPrimaryButtonColor()
         }
     }
     
@@ -48,6 +50,10 @@ class ButtonPadView: BaseUIView {
         didSet {
             primaryButton.setTitleColor(primaryButtonTitleColor, for: .normal)
         }
+    }
+    
+    public var underlinePrimaryButton = false {
+        didSet { if underlinePrimaryButton { primaryButton.underline() }  }
     }
 
     /// Set the right button text
@@ -58,15 +64,17 @@ class ButtonPadView: BaseUIView {
     }
     
     public var secondaryButtonColor: UIColor? {
-        didSet {
-            secondaryButton.backgroundColor = secondaryButtonColor
-        }
+        didSet { setSecondaryButtonColor() }
     }
     
     public var secondaryButtonTitleColor: UIColor? {
         didSet {
             secondaryButton.setTitleColor(secondaryButtonTitleColor, for: .normal)
         }
+    }
+    
+    public var underlineSecondaryButton = false {
+        didSet { if underlineSecondaryButton { secondaryButton.underline() }  }
     }
 
     public var secondaryButtonHidden: Bool = false {
@@ -81,13 +89,23 @@ class ButtonPadView: BaseUIView {
         }
     }
     
+    public var underlineButtonsWhenHasNoBackgroundColor: Bool = false {
+        didSet {
+            setUnderlineButtonsWhenHasNoBackgroundColor()
+        }
+    }
+    
     public var primaryCompletion: CompletionHandler?
     public var secondaryCompletion: CompletionHandler?
+    
+    // MARK: - Override Methods
     
     override func configureView() {
         super.configureView()
         addSubViews()
     }
+    
+    // MARK: - Public Methods
     
     public func setButtons(horizontalPadding: CGFloat, cornerRadius: CGFloat, primaryButtonCornerRadius: CGFloat, secondaryButtonCornerRadius: CGFloat) {
         buttonsHorizontalPadding = horizontalPadding
@@ -95,6 +113,8 @@ class ButtonPadView: BaseUIView {
         setPrimaryButtonCornerRadius(primaryButtonCornerRadius)
         setSecondaryButtonCornerRadius(secondaryButtonCornerRadius)
     }
+    
+    // MARK: - Private Methods
     
     private func addSubViews() {
         containerStackView.fixInView(self)
@@ -153,6 +173,16 @@ class ButtonPadView: BaseUIView {
         primaryButton.layer.cornerRadius = cornerRadius
     }
     
+    private func setPrimaryButtonColor() {
+        primaryButton.backgroundColor = primaryButtonColor
+        setUnderlineButtonsWhenHasNoBackgroundColor()
+    }
+    
+    private func setSecondaryButtonColor() {
+        secondaryButton.backgroundColor = secondaryButtonColor
+        setUnderlineButtonsWhenHasNoBackgroundColor()
+    }
+    
     private func setSecondaryButtonCornerRadius(_ cornerRadius: CGFloat) {
         guard alignment != .horizontal, buttonsHorizontalPadding > 0 else {
             return
@@ -185,6 +215,18 @@ class ButtonPadView: BaseUIView {
             updateConstraint(identifier: "primaryButtonRight", constant: -buttonsHorizontalPadding)
             updateConstraint(identifier: "secondaryButtonLeft", constant: buttonsHorizontalPadding)
             updateConstraint(identifier: "secondaryButtonRight", constant: -buttonsHorizontalPadding)
+        }
+    }
+    
+    private func setUnderlineButtonsWhenHasNoBackgroundColor() {
+        guard underlineButtonsWhenHasNoBackgroundColor else {
+            return
+        }
+        if primaryButton.backgroundColor == .clear || primaryButton.backgroundColor == superview?.backgroundColor {
+            underlinePrimaryButton = true
+        }
+        if secondaryButton.backgroundColor == .clear || secondaryButton.backgroundColor == superview?.backgroundColor {
+            underlineSecondaryButton = true
         }
     }
     
