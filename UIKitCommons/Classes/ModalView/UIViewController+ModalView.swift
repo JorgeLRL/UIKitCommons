@@ -11,15 +11,15 @@ public extension UIViewController {
     
     /// Present an ModalViewController overFullScreen.
     /// - Parameters:
-    ///   - builder: (ModalConfiguration) Model used to configure the view.
+    ///   - configuraction: (ModalConfiguration) Model used to configure the view.
     ///   - primaryCompletion: Right button event.
     ///   - secondaryCompletion: Left button event.
-    func showModal(_ builder: ModalConfiguration,
+    func showModal(_ configuraction: ModalConfiguration,
                    primaryCompletion: CompletionHandler? = nil,
                    secondaryCompletion: CompletionHandler? = nil,
                    backgroundTapDismissViewCompletion: CompletionHandler? = nil) {
         let viewController = ModalViewController()
-        viewController.config(builder,
+        viewController.config(configuraction,
                               primaryCompletion: primaryCompletion,
                               secondaryCompletion: secondaryCompletion,
                               backgroundTapDismissViewCompletion: backgroundTapDismissViewCompletion)

@@ -8,3 +8,4 @@
 import Foundation
 
 public typealias CompletionHandler = () -> Void
+public typealias GenericCompletionHandler<T> = (T) -> Void

@@ -14,6 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		617D811328C9AF58004E60ED /* ModalExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617D811228C9AF58004E60ED /* ModalExampleViewController.swift */; };
 		78873018C9EB5ACD06C3BF29 /* Pods_UIKitCommons_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DD9566AFAAFC82465EF406D /* Pods_UIKitCommons_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		607FACE51AFB9204008FA782 /* UIKitCommons_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UIKitCommons_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		617D811228C9AF58004E60ED /* ModalExampleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalExampleViewController.swift; sourceTree = "<group>"; };
 		96A7FCA6CC9469CE4EA5B1F8 /* Pods-UIKitCommons_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UIKitCommons_Example.release.xcconfig"; path = "Target Support Files/Pods-UIKitCommons_Example/Pods-UIKitCommons_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A9D263020291E9AC965E9E65 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D03C14E6B0626428A77F7FF1 /* UIKitCommons.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = UIKitCommons.podspec; path = ../UIKitCommons.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -104,6 +106,7 @@
 		607FACD21AFB9204008FA782 /* Example for UIKitCommons */ = {
 			isa = PBXGroup;
 			children = (
+				617D811128C9AF3F004E60ED /* ModalView */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -148,6 +151,14 @@
 				A9D263020291E9AC965E9E65 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
+		617D811128C9AF3F004E60ED /* ModalView */ = {
+			isa = PBXGroup;
+			children = (
+				617D811228C9AF58004E60ED /* ModalExampleViewController.swift */,
+			);
+			name = ModalView;
 			sourceTree = "<group>";
 		};
 		DD655459B8020D0BF4C1C67B /* Frameworks */ = {
@@ -332,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				617D811328C9AF58004E60ED /* ModalExampleViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);

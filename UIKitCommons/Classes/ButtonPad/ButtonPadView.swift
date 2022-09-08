@@ -28,7 +28,7 @@ class ButtonPadView: BaseUIView {
     // MARK: - Public Properties
     
     public var buttonsSpacing: CGFloat = 0 {
-        didSet { containerStackView.spacing = buttonsSpacing }
+        didSet { setButtonsSpacing() }
     }
     
     public var buttonsHorizontalPadding: CGFloat = 0 {
@@ -133,6 +133,10 @@ class ButtonPadView: BaseUIView {
                                identifier: "secondaryButton")
     }
     
+    private func setButtonsSpacing() {
+        containerStackView.spacing = buttonsSpacing
+    }
+    
     private func setButtonsDisplay() {
         switch alignment {
         case .horizontal:
@@ -167,7 +171,7 @@ class ButtonPadView: BaseUIView {
     }
     
     private func setPrimaryButtonCornerRadius(_ cornerRadius: CGFloat) {
-        guard alignment != .horizontal, buttonsHorizontalPadding > 0 else {
+        guard buttonsHorizontalPadding > 0 else {
             return
         }
         primaryButton.layer.cornerRadius = cornerRadius
@@ -176,22 +180,24 @@ class ButtonPadView: BaseUIView {
     private func setPrimaryButtonColor() {
         primaryButton.backgroundColor = primaryButtonColor
         setUnderlineButtonsWhenHasNoBackgroundColor()
+        setButtonsSpacingIfNeeded()
     }
     
     private func setSecondaryButtonColor() {
         secondaryButton.backgroundColor = secondaryButtonColor
         setUnderlineButtonsWhenHasNoBackgroundColor()
+        setButtonsSpacingIfNeeded()
     }
     
     private func setSecondaryButtonCornerRadius(_ cornerRadius: CGFloat) {
-        guard alignment != .horizontal, buttonsHorizontalPadding > 0 else {
+        guard buttonsHorizontalPadding > 0 else {
             return
         }
         secondaryButton.layer.cornerRadius = cornerRadius
     }
     
     private func setButtonsCornerRadius(_ cornerRadius: CGFloat) {
-        guard alignment != .vertical, buttonsHorizontalPadding > 0 else {
+        guard buttonsHorizontalPadding > 0 else {
             return
         }
         containerStackView.layer.cornerRadius = cornerRadius
@@ -203,19 +209,11 @@ class ButtonPadView: BaseUIView {
     }
     
     private func setButtonsHorizontalPadding() {
-        switch alignment {
-        case .horizontal:
-            containerStackView.anchor(left: leftAnchor,
-                                      paddingLeft: buttonsHorizontalPadding,
-                                      right: rightAnchor,
-                                      paddingRight: buttonsHorizontalPadding,
-                                      identifier: "containerStackView")
-        case .vertical:
-            updateConstraint(identifier: "primaryButtonLeft", constant: buttonsHorizontalPadding)
-            updateConstraint(identifier: "primaryButtonRight", constant: -buttonsHorizontalPadding)
-            updateConstraint(identifier: "secondaryButtonLeft", constant: buttonsHorizontalPadding)
-            updateConstraint(identifier: "secondaryButtonRight", constant: -buttonsHorizontalPadding)
-        }
+        containerStackView.anchor(left: leftAnchor,
+                                  paddingLeft: buttonsHorizontalPadding,
+                                  right: rightAnchor,
+                                  paddingRight: buttonsHorizontalPadding,
+                                  identifier: "containerStackView")
     }
     
     private func setUnderlineButtonsWhenHasNoBackgroundColor() {
@@ -227,6 +225,20 @@ class ButtonPadView: BaseUIView {
         }
         if secondaryButton.backgroundColor == .clear || secondaryButton.backgroundColor == superview?.backgroundColor {
             underlineSecondaryButton = true
+        }
+    }
+    
+    private func setButtonsSpacingIfNeeded() {
+        guard buttonsSpacing <= 0 else {
+            return
+        }
+        
+        guard secondaryButton.layer.cornerRadius > 0 || primaryButton.layer.cornerRadius > 0 else {
+            return
+        }
+        
+        if (primaryButton.backgroundColor != .clear || primaryButton.backgroundColor != superview?.backgroundColor) && (secondaryButton.backgroundColor != .clear || secondaryButton.backgroundColor != superview?.backgroundColor)  {
+            buttonsSpacing = 8
         }
     }
     

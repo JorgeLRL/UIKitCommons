@@ -2,12 +2,12 @@
 //  UIButtonExtensions.swift
 //  UIKitCommons
 //
-//  Created by Jorge Rivera on 1/09/22.
+//  Created by Jorge Luis Rivera Ladino on 1/09/22.
 //
 
 import UIKit
 
-extension UIButton {
+public extension UIButton {
     
     func underline() {
         guard let title = self.titleLabel else { return }

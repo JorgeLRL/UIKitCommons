@@ -20,6 +20,10 @@ class ModalViewController: UIViewController {
             $0.tintColor = .darkGray
         }
     }
+    
+    private let scrollView = ScrollView().then {
+        $0.addedScrollViewHeightIfNeeded = true
+    }
 
     private let containerStackView = UIStackView().then {
         $0.axis = .vertical
@@ -28,10 +32,19 @@ class ModalViewController: UIViewController {
     
     private let contentView = UIView()
     private lazy var buttonPadView = ButtonPadView().then {
+        $0.backgroundColor = .clear
         $0.primaryCompletion = { [weak self] in self?.dismissWithEffect(completion: self?.primaryCompletion) }
         $0.secondaryCompletion = { [weak self] in self?.dismissWithEffect(completion: self?.secondaryCompletion) }
     }
     
+    // MARK: - Internal Properties
+    
+    var containerStackViewBackgroundColor: UIColor? {
+        didSet {
+            containerStackView.backgroundColor = containerStackViewBackgroundColor
+        }
+    }
+        
     // MARK: - Private Properties
     
     private var configuration = ModalConfiguration()
@@ -57,12 +70,39 @@ class ModalViewController: UIViewController {
         buttonPadView.primaryButtonText = configuration.primaryActionText
         buttonPadView.primaryButtonColor = configuration.primaryButtonColor
         buttonPadView.primaryButtonTitleColor = configuration.primaryButtonTitleColor
-        if let secondaryTitle = configuration.secondaryActionText {
+        if let secondaryTitle = configuration.secondaryActionText,
+           secondaryTitle.isNotEmpty {
             buttonPadView.secondaryButtonText = secondaryTitle
             buttonPadView.secondaryButtonColor = configuration.secondaryButtonColor
             buttonPadView.secondaryButtonTitleColor = configuration.secondaryButtonTitleColor
         } else {
             buttonPadView.secondaryButtonHidden = true
+        }
+        
+        setButtonPadViewBottomConstriantIfNeeded()
+    }
+    
+    func setButtonPadViewBottomConstriantIfNeeded() {
+        guard view.windowHasNotSafeArea,
+              configuration.buttonsPadHorizontalPadding > 0 else {
+            return
+        }
+        if buttonPadView.secondaryButtonHidden {
+            guard configuration.primaryButtonColor != .clear || configuration.primaryButtonColor != containerStackViewBackgroundColor else {
+                return
+            }
+            if configuration.buttonsPadBottomPadding == 0 {
+                view.updateConstraint(identifier: "buttonPadViewBottom", constant: -16)
+            }
+        } else {
+            if configuration.buttonPadAligment == .vertical {
+                guard configuration.secondaryButtonColor != .clear && configuration.secondaryButtonColor != containerStackViewBackgroundColor else {
+                    return
+                }
+            }
+            if configuration.buttonsPadBottomPadding == 0 {
+                view.updateConstraint(identifier: "buttonPadViewBottom", constant: -16)
+            }
         }
     }
     
@@ -81,7 +121,11 @@ class ModalViewController: UIViewController {
     
     public override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        containerStackView.layer.cornerRadius = 8
+        if configuration.roundOnlyTopCorners {
+            containerStackView.roundTopCornersWith(cornerRadius: configuration.cornerRadius)
+        } else {
+            containerStackView.roundAllCornersWith(cornerRadius: configuration.cornerRadius)
+        }
     }
     
     // MARK: - Internal Methods
@@ -102,8 +146,11 @@ class ModalViewController: UIViewController {
         backgroundView.fixInView(view)
         view.addSubview(containerStackView)
         view.addSubview(closeButton)
-        containerStackView.addArrangedSubview(contentView)
+         
+        containerStackView.addArrangedSubview(scrollView)
         containerStackView.addArrangedSubview(buttonPadView)
+         
+        scrollView.addContainerView(contentView)
         addConstraints()
     }
     
@@ -117,12 +164,15 @@ class ModalViewController: UIViewController {
                            height: configuration.closeButtonHeight)
         
         // containerStackView
-        containerStackView.anchor(bottom: view.bottomAnchor,
+        containerStackView.anchor(topGreaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor,
+                                  paddingTop: 20,
+                                  bottom: view.bottomAnchor,
                                   left: view.leftAnchor,
                                   right: view.rightAnchor)
         
         // buttonPadView
-        buttonPadView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: configuration.buttonsPadBottomPadding).isActive = true
+        buttonPadView.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor,
+                             identifier: "buttonPadView")
     }
     
     // MARK: - Private @objc Methods

@@ -24,11 +24,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "UIKitCommons"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        addSubView()
+        addSubViews()
     }
     
-    private func addSubView() {
+    private func addSubViews() {
         tableView.fixInView(view)
     }
 
@@ -54,31 +55,11 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            showModal()
+            let modalExampleViewController = ModalExampleViewController()
+            modalExampleViewController.title = options[indexPath.row].rawValue
+            navigationController?.pushViewController(modalExampleViewController, animated: true)
         default: break
         }
-    }
-    
-    private func showModal() {
-        let modalConfiguration = ModalConfiguration(customView: buildAlertView(),
-                                                    secondaryActionText: "Cancelar",
-                                                    secondaryButtonColor: .clear,
-                                                    buttonPadAligment: .vertical,
-                                                    underlineButtonsWhenHasNoBackgroundColor: true)
-        showModal(modalConfiguration)
-    }
-    
-    private func buildAlertView() -> AlertView {
-        let alertView = AlertView().then {
-            $0.frame = CGRect(x: 0, y: 0, width: 0, height: 250)
-            if #available(iOS 13.0, *) {
-                $0.alertImage = UIImage(systemName: "pencil.circle.fill")
-            }
-            $0.titleText = "title"
-            $0.messageText = "description"
-            $0.titleTextColor = .blue
-        }
-        return alertView
     }
     
 }

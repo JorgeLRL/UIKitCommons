@@ -23,7 +23,7 @@ private class ClosureSleeve {
 }
 
 
-extension UIControl {
+public extension UIControl {
     
     func deleteActions(){
         removeTarget(nil, action: nil, for: .allEvents)
