@@ -59,14 +59,6 @@ let alertView = AlertView().then {
     $0.titleTextColor = .blue
 }
 
-self.showFIFAlertCard(
-    FIFAlertCardBuilder(
-        titleAttributedString: NSAttributedString(string: "Título"), descriptionAttributedString: NSAttributedString(string: "Descripción")
-    ),
-    primaryCompletion: {
-    debugPrint("Callback primario.")
-})
-
 let modalConfiguration = ModalConfiguration()
     .setCustomView(alertView)
     
