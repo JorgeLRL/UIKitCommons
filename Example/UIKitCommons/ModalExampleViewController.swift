@@ -21,7 +21,7 @@ class ModalExampleViewController: UIViewController {
     }
     
     private lazy var simpleModalWithAlertViewButton = UIButton().then {
-        $0.addAction(for: .touchUpInside) { [weak self] in
+        $0.addTargetAction(for: .touchUpInside) { [weak self] in
             self?.showModal()
         }
         $0.setTitle("Modal with custom Alert View", for: .normal)

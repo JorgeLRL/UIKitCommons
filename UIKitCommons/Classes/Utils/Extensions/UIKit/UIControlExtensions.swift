@@ -28,7 +28,7 @@ public extension UIControl {
         removeTarget(nil, action: nil, for: .allEvents)
     }
     
-    func addAction(for controlEvents: UIControl.Event, _ closure: @escaping CompletionHandler, deleteFirstActions: Bool = true) {
+    func addTargetAction(for controlEvents: UIControl.Event, _ closure: @escaping CompletionHandler, deleteFirstActions: Bool = true) {
         if deleteFirstActions { deleteActions() }
         let sleeve = ClosureSleeve(closure)
         addTarget(sleeve, action: #selector(ClosureSleeve.invoke), for: controlEvents)

@@ -15,12 +15,12 @@ class ButtonPadView: BaseUIView {
         $0.distribution = .fillEqually
     }
     private lazy var primaryButton = UIButton().then {
-        $0.addAction(for: .touchUpInside) { [weak self] in
+        $0.addTargetAction(for: .touchUpInside) { [weak self] in
             self?.primaryCompletion?()
         }
     }
     private lazy var secondaryButton = UIButton().then {
-        $0.addAction(for: .touchUpInside) { [weak self] in
+        $0.addTargetAction(for: .touchUpInside) { [weak self] in
             self?.secondaryCompletion?()
         }
     }
