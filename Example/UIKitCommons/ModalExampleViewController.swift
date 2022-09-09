@@ -157,7 +157,9 @@ class ModalExampleViewController: UIViewController {
             .setButtonsPadCornerRadius(buttonsPadCornerRadius)
             .setUnderlineButtonsWhenHasNoBackgroundColor(underlineButtonsWhenHasNoBackgroundColor)
                 
-        showModal(modalConfiguration)
+        showModal(modalConfiguration, primaryCompletion: {
+            print("Primary button tapped")
+        })
     }
     
     private func buildAlertView() -> AlertView {

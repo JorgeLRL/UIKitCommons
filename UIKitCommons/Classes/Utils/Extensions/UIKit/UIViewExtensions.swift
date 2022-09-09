@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension UIView {
+extension UIView {
     
     // MARK: - SafeArea
     

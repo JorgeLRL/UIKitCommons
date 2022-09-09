@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIKitCommons'
-  s.version          = '1.2.0'
+  s.version          = '1.0.0'
   s.summary          = 'Generic and reusable views.'
 
 # This description is used to generate tags and improve search results.

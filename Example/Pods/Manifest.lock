@@ -1,5 +1,5 @@
 PODS:
-  - UIKitCommons (1.2.0)
+  - UIKitCommons (1.0.0)
 
 DEPENDENCIES:
   - UIKitCommons (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UIKitCommons: 7b6fda3139620e8bc3c6f5e1dce6b3dcbad332a7
+  UIKitCommons: 9f1710ed9b67382ce5cae3f30026a0193d10dad8
 
-PODFILE CHECKSUM: e564b14054fd0f1818a465ae32f1c1c0fa04c807
+PODFILE CHECKSUM: b632406f47712d0bf2055b3832b77003fc33bb06
 
 COCOAPODS: 1.11.3

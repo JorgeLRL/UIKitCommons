@@ -7,7 +7,7 @@
 
 import UIKit
 
-public extension UIStackView {
+extension UIStackView {
     
     func addArrangedSubview(_ view: UIView, withMargin margin: UIEdgeInsets, identifier: String = String()) {
         let containerView = UIView()

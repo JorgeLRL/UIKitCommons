@@ -5,11 +5,15 @@
 [![License](https://img.shields.io/cocoapods/l/UIKitCommons.svg?style=flat)](https://cocoapods.org/pods/UIKitCommons)
 [![Platform](https://img.shields.io/cocoapods/p/UIKitCommons.svg?style=flat)](https://cocoapods.org/pods/UIKitCommons)
 
+UIKitCommons is a set of reusable and generic components
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Requirements
+
+- iOS 12.0+
 
 ## Installation
 
@@ -18,6 +22,57 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'UIKitCommons'
+```
+
+## Use
+
+* ### [Componentes](#markdown-header-componentes)
+1. [ModalViewController](#1-modalviewcontroller)
+
+___
+## Componentes
+___
+
+#### **1. ModalViewController**
+
+![Alt text](/Resources/ModalViewController/modalViewController.gif "ModalViewController")
+
+**Compatibilidad:** Swift
+
+**_v1.0.0:_**: 
+
+- **Métodos:**
+
+```swift
+
+//Present an ModalViewController
+func showModal
+```
+
+- **Ejemplo de uso:**
+
+```swift
+let alertView = AlertView().then {
+    if #available(iOS 13.0, *) { $0.alertImage = UIImage(systemName: "pencil.circle.fill") }
+    $0.titleText = "Title"
+    $0.messageText = "Description"
+    $0.titleTextColor = .blue
+}
+
+self.showFIFAlertCard(
+    FIFAlertCardBuilder(
+        titleAttributedString: NSAttributedString(string: "Título"), descriptionAttributedString: NSAttributedString(string: "Descripción")
+    ),
+    primaryCompletion: {
+    debugPrint("Callback primario.")
+})
+
+let modalConfiguration = ModalConfiguration()
+    .setCustomView(alertView)
+    
+showModal(modalConfiguration, primaryCompletion: {
+    print("Primary button tapped")
+})
 ```
 
 ## Author

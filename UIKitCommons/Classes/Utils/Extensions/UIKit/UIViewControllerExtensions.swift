@@ -7,7 +7,7 @@
 
 import Foundation
 
-public extension UIViewController {
+extension UIViewController {
     
     func presentBottomModal(_ viewController: UIViewController, animated: Bool = true, backgroundAlpha: CGFloat = 0.5, completion: CompletionHandler? = nil) {
         viewController.setBackgroundAlpha(backgroundAlpha)
