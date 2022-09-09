@@ -49,7 +49,7 @@ ___
 func showModal
 ```
 
-- **Ejemplo de uso:**
+- **Usage examples:**
 
 ```swift
 let alertView = AlertView().then {
